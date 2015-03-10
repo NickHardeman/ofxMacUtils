@@ -1,7 +1,20 @@
 # ofxMacUtils
 
 This class includes functions to make it easier to work with OSX applications. 
+It was designed to configure OSX for long term installations.
 Tested with OF v.0.08 and OSX 10.8 - 10.10.
+
+Some example functionality:
+* Set Wifi to on, off.
+* Set GateKeeper
+* Disable Notification Center
+* Disable / Enable Software Updates
+* Disable Bluetooth and its notifications
+* Disable Screen Saver
+* Disable Power Saver
+* Set the Desktop Image
+* Take screen captures on all monitors
+* Many more functions...
 
 If you want to use some of the functionality, you need to activate some objective-c functionality. Add the following line to the project.xcconfig.
 ![project.xcconfig](https://github.com/NickHardeman/ofxMacUtils/blob/master/ReadMeImages/Screen%20Shot%202015-03-10%20at%204.52.06%20PM.png)
