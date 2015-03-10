@@ -4,6 +4,8 @@ This class includes functions to make it easier to work with OSX applications.
 It was designed to configure OSX for long term installations.
 Tested with OF v.0.08 and OSX 10.8 - 10.10.
 
+This addon is evolving and new functionality is currently being added.
+
 Some example functionality:
 * Set Wifi to on, off.
 * Set GateKeeper
