@@ -9,7 +9,7 @@ This addon is evolving and new functionality is currently being added.
 ### CAUTION
 Some of this functionality can be difficult to undo, for example accidentaly turning off screen sharing on a remote computer you don't have access to.
 
-Some example functionality:
+### Example Functionality:
 * Set Wifi to on, off.
 * Set GateKeeper
 * Disable Notification Center
