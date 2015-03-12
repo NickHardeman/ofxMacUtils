@@ -24,7 +24,7 @@ Some of this functionality can be difficult to undo, for example accidentaly tur
 If you want to use some of the functionality, you need to activate some objective-c functionality. Add the following line to the project.xcconfig.
 ![project.xcconfig](https://github.com/NickHardeman/ofxMacUtils/blob/master/ReadMeImages/Screen%20Shot%202015-03-10%20at%204.52.06%20PM.png)
 
-Any files that will be using ofxMacUtils with OFX_MAC_UTILS_USE_OBJ_C active need to be set to compile as Objective-C++ Source. You can do that by selecting the file and changing the type drop down to Objective-C++ Source. Don't forget to change main.cpp also! See image below.
+Any files that will be using ofxMacUtils with OFX_MAC_UTILS_USE_OBJ_C active need to be set to compile as Objective-C++ Source. You can do that by selecting the file and changing the type drop down to Objective-C++ Source. Don't forget to change main.cpp also! If you are still having trouble, try Project > Clean and then build again. See image below.
 ![Change source on main.cpp](https://github.com/NickHardeman/ofxMacUtils/blob/master/ReadMeImages/Screen%20Shot%202015-03-10%20at%204.52.31%20PM.png)
 
 You can also set all the files in your project to compile as Objective-C++ Source in the Build Settings of the project. Using this method, you don't have to change each file individually, but all of your files need to be compatible with Objective-C++ (.h, .cpp, .mm, .m, etc.). See Image below.
