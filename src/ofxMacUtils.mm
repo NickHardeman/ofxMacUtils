@@ -206,6 +206,13 @@ string ofxMacUtils::getComputerHostName() {
     return res;
 }
 
+#ifdef OFX_MAC_UTILS_USE_OBJ_C
+//----------------------------------------------------------
+string ofxMacUtils::getCurrentUsername() {
+    return [NSUserName() UTF8String];
+}
+#endif
+
 // http://apple.stackexchange.com/questions/47503/how-to-control-bluetooth-wireless-radio-from-the-command-line
 //----------------------------------------------------------
 void ofxMacUtils::setBluetooth( string aSystemPassword, bool bEnable ) {
@@ -343,7 +350,7 @@ bool ofxMacUtils::isApplicationALoginItem( string aAppName ) {
 
 //--------------------------------------------------------------
 void ofxMacUtils::addApplicationToLoginItems( string aPathToApp, bool bHide ) {
-    // osascript -e 'tell application "System Events" to make login item at end with properties {path:"/Users/NickHardeman/Documents/ProjectsDev/ConnectedWorlds/of_v0.8.0_osx_release/apps/Experiments/WatchDog/bin/ScenesSetup_NickDebug.app", hidden:false}'
+    // osascript -e 'tell application "System Events" to make login item at end with properties {path:"fullPathToApp.app", hidden:false}'
     string hstr = (bHide ? "true" : "false");
     string command = "osascript -e 'tell application \"System Events\" to make login item at end with properties {path:\""+aPathToApp+"\", hidden:"+hstr+"}'";
     string execres = executeSystemCommand( command );
@@ -477,7 +484,7 @@ void ofxMacUtils::setFireWall( string aRootPassword, bool bEnable ) {
     string res = executeSystemCommand( command, aRootPassword );
     command = "launchctl unload /System/Library/LaunchDaemons/com.apple.alf.agent.plist";
     res = executeSystemCommand( command, aRootPassword );
-    command = "sudo launchctl load /System/Library/LaunchDaemons/com.apple.alf.agent.plist";
+    command = "launchctl load /System/Library/LaunchDaemons/com.apple.alf.agent.plist";
     res = executeSystemCommand( command, aRootPassword );
 }
 
@@ -515,6 +522,9 @@ bool ofxMacUtils::saveNsImage( NSImage* aImage, string aSavePath, bool bMakeAbso
     }
     
     CGImageRef imgRef = resizeNSImageToCGRef( aImage, aWidth, aHeight, bProportional );
+    bool bIsNil = imgRef == nil;
+    cout << "imgRef is nil: " << bIsNil << endl;
+    
     if( imgRef == nil ) return false;
     
     
@@ -534,9 +544,7 @@ bool ofxMacUtils::saveNsImage( NSImage* aImage, string aSavePath, bool bMakeAbso
 
 //--------------------------------------------------------------
 CGImageRef ofxMacUtils::resizeNSImageToCGRef( NSImage* aImage, float aWidth, float aHeight, bool bProportional ) {
-    CGImageRef cgRef = [aImage CGImageForProposedRect:nil
-                                              context:nil
-                                                hints:nil];
+    
     
     ofRectangle trect( 0, 0, aWidth, aHeight );
     if( bProportional ) {
@@ -545,26 +553,49 @@ CGImageRef ofxMacUtils::resizeNSImageToCGRef( NSImage* aImage, float aWidth, flo
         trect = srect;
     }
     
+    NSRect pRect = NSMakeRect( 0, 0, [aImage size].width, [aImage size].height );
+    NSRect rpRect = NSMakeRect( 0, 0, trect.width, trect.height );
+    
+    CGImageRef cgRef = [aImage CGImageForProposedRect:nil
+                                              context:nil
+                                                hints:nil];
+    
+    CGImageRef rcgRef = [aImage CGImageForProposedRect:&rpRect
+                                              context:nil
+                                                hints:nil];
     
     // create context, keeping original image properties
     CGColorSpaceRef colorspace = CGImageGetColorSpace(cgRef);
     CGContextRef context = CGBitmapContextCreate(NULL, trect.width, trect.height,
                                                  CGImageGetBitsPerComponent(cgRef),
-                                                 CGImageGetBytesPerRow(cgRef),
+                                                 0, //CGImageGetBytesPerRow(cgRef),
                                                  colorspace,
                                                  CGImageGetAlphaInfo(cgRef));
-    CGColorSpaceRelease(colorspace);
     
+    
+    CGColorSpaceRef rcolorspace = CGImageGetColorSpace(rcgRef);
+    CGContextRef rcontext = CGBitmapContextCreate(NULL, trect.width, trect.height,
+                                                 CGImageGetBitsPerComponent(rcgRef),
+                                                 0,//CGImageGetBytesPerRow(rcgRef),
+                                                 colorspace,
+                                                 CGImageGetAlphaInfo(rcgRef));
+    
+    CGColorSpaceRelease(colorspace);
+    CGColorSpaceRelease(rcolorspace);
+    
+    bool bContextIsNull = context == NULL;
+    cout << "context: " << bContextIsNull << " w: " << trect.width << " x " << trect.height << endl;
     
     if(context == NULL)
         return nil;
     
     
     // draw image to context (resizing it)
-    CGContextDrawImage(context, CGRectMake(0, 0, trect.width, trect.height), cgRef);
+    CGContextDrawImage(rcontext, CGRectMake(0, 0, trect.width, trect.height), rcgRef);
     // extract resulting image from context
-    CGImageRef imgRef = CGBitmapContextCreateImage(context);
+    CGImageRef imgRef = CGBitmapContextCreateImage(rcontext);
     CGContextRelease(context);
+    CGContextRelease(rcontext);
     return imgRef;
 }
 #endif

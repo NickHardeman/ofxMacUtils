@@ -6,13 +6,13 @@
 //
 
 #pragma once
-
 #include "ofMain.h"
 
 #ifdef OFX_MAC_UTILS_USE_OBJ_C
 #include "ofxMacUtilsWorkspaceResponder.h"
 #endif
 #include "ofxMacUtilsWorkpaceNotificationsListener.h"
+#include "ofxMacUtilsSimpleSettings.h"
 
 
 class ofxMacUtils {
@@ -54,6 +54,10 @@ public:
     static string getComputerName();
     static string getComputerLocalHostName();
     static string getComputerHostName();
+    
+#ifdef OFX_MAC_UTILS_USE_OBJ_C
+    static string getCurrentUsername();
+#endif
     
     static void setBluetooth( string aSystemPassword, bool bEnable );
     static void setBluetoothSeupAssistant( string aSystemPassword, bool bEnable );
