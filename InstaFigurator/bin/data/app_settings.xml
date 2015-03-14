@@ -1,0 +1,22 @@
+<window x="0" y="0" width="1091" height="738"></window>
+<setting name="Add As Login Item" value="0"></setting>
+<setting name="Bluetooth" value="0"></setting>
+<setting name="Bluetooth Assist" value="0"></setting>
+<setting name="Computer Name" value="0"></setting>
+<setting name="Crash Dialog" value="0"></setting>
+<setting name="Desktop Image" value="0"></setting>
+<setting name="DesktopImagePath" value=""></setting>
+<setting name="Firewall" value="0"></setting>
+<setting name="Gate Keeper" value="0"></setting>
+<setting name="Login Image" value="1"></setting>
+<setting name="Monitoring App" value=""></setting>
+<setting name="Notification Center" value="0"></setting>
+<setting name="Restart On Power Failure" value="0"></setting>
+<setting name="RootPW" value=""></setting>
+<setting name="Screen Sharing" value="0"></setting>
+<setting name="Screensaver" value="0"></setting>
+<setting name="Send Diagnostics" value="0"></setting>
+<setting name="Sleep Settings" value="0"></setting>
+<setting name="Software Updates" value="0"></setting>
+<setting name="User" value="NickHardeman"></setting>
+<setting name="WIFI" value="0"></setting>
