@@ -9,6 +9,8 @@ This addon is evolving and new functionality is currently being added.
 ### CAUTION
 Some of this functionality can be difficult to undo, for example accidentaly turning off screen sharing on a remote computer you don't have access to.
 
+### Instafigurator
+Added a GUI to easily configure a mac for a long term installtion.
 ![Instafigurator](https://github.com/NickHardeman/ofxMacUtils/blob/master/ReadMeImages/Screen%20Shot%202015-03-14%20at%207.52.25%20PM.png)
 
 ### Example Functionality:
