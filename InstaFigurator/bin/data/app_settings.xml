@@ -8,7 +8,7 @@
 <setting name="DesktopImagePath" value=""></setting>
 <setting name="Firewall" value="0"></setting>
 <setting name="Gate Keeper" value="0"></setting>
-<setting name="Login Image" value="1"></setting>
+<setting name="Login Image" value="0"></setting>
 <setting name="Monitoring App" value=""></setting>
 <setting name="Notification Center" value="0"></setting>
 <setting name="Restart On Power Failure" value="0"></setting>
