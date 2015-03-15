@@ -34,8 +34,6 @@ void ofApp::ofxMacUtilsWorkpaceNotificationReceived( int aEvent ) {
         messages.push_back( "power down notification: " + ofToString( ofGetElapsedTimef(), 0) );
         ofExit();
     }
-    
-    
 }
 
 //--------------------------------------------------------------
