@@ -292,18 +292,18 @@
                     <rect key="frame" x="621" y="46" width="450" height="618"/>
                     <autoresizingMask key="autoresizingMask"/>
                     <clipView key="contentView" id="PMr-f0-Q4N">
-                        <rect key="frame" x="1" y="1" width="433" height="616"/>
+                        <rect key="frame" x="1" y="1" width="448" height="616"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView editable="NO" importsGraphics="NO" richText="NO" findStyle="panel" usesRuler="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" id="RYk-aL-G7j">
-                                <rect key="frame" x="0.0" y="0.0" width="433" height="616"/>
+                                <rect key="frame" x="0.0" y="0.0" width="448" height="616"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="textColor" red="0.51200000000000001" green="0.754" blue="0.34300000000000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="backgroundColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
-                                <size key="minSize" width="433" height="616"/>
+                                <size key="minSize" width="432" height="616"/>
                                 <size key="maxSize" width="470" height="10000000"/>
                                 <color key="insertionPointColor" red="0.0" green="0.626" blue="0.746" alpha="1" colorSpace="calibratedRGB"/>
-                                <size key="minSize" width="433" height="616"/>
+                                <size key="minSize" width="432" height="616"/>
                                 <size key="maxSize" width="470" height="10000000"/>
                             </textView>
                         </subviews>
@@ -314,7 +314,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                     <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="gZw-h2-s9d">
-                        <rect key="frame" x="434" y="1" width="15" height="616"/>
+                        <rect key="frame" x="433" y="1" width="16" height="616"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                 </scrollView>
