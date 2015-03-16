@@ -12,7 +12,6 @@
 #include "ofxMacUtilsWorkspaceResponder.h"
 #endif
 #include "ofxMacUtilsWorkpaceNotificationsListener.h"
-#include "ofxMacUtilsSimpleSettings.h"
 
 
 class ofxMacUtils {

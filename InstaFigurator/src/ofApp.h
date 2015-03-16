@@ -3,6 +3,7 @@
 #include "ofMain.h"
 #include "ofxMacUtils.h"
 #include "ofxMacUtilsEncryption.h"
+#include "ofxMacUtilsSimpleSettings.h"
 #include "MainViewController.h"
 
 class ofApp : public ofBaseApp, public ofThread {
