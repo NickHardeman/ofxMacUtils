@@ -9,7 +9,7 @@
 #include "ofMain.h"
 
 #ifdef OFX_MAC_UTILS_USE_OBJ_C
-#include "ofxMacUtilsWorkspaceResponder.h"
+    #include "ofxMacUtilsWorkspaceResponder.h"
 #endif
 #include "ofxMacUtilsWorkpaceNotificationsListener.h"
 

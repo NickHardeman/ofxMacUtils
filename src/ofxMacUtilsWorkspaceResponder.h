@@ -7,7 +7,12 @@
 //
 
 #include <CoreFoundation/CoreFoundation.h>
-#include "ofMain.h"
+#ifdef NOT_IN_OF
+    #import <Cocoa/Cocoa.h>
+#else 
+    #include "ofMain.h"
+#endif
+
 
 @interface ofxMacUtilsWorkspaceResponder : NSObject {
     BOOL bHasListeners;
