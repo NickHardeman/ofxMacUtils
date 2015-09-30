@@ -7,7 +7,7 @@ Tested with OF v.0.08 and OSX 10.8 - 10.10.
 This addon is evolving and new functionality is currently being added.
 
 ### CAUTION
-Some of this functionality can be difficult to undo, for example accidentaly turning off screen sharing on a remote computer you don't have access to.
+Some of this functionality can be difficult to undo, for example accidentally turning off screen sharing on a remote computer you don't have access to.
 
 ### Instafigurator
 Added a GUI to easily configure a mac for a long term installtion.
